@@ -1177,7 +1177,8 @@ export default {
         },
 
         logout() {
-            fetch('http://127.0.0.1:5000/logout', {
+            // fetch('http://127.0.0.1:5000/logout', {
+            fetch('http://35.182.29.153/api/logout', {
             // fetch('https://phishing-application-demo.onrender.com/logout', {
                 method: 'POST',
                 headers: {
@@ -1202,7 +1203,8 @@ export default {
             }
 
             try {
-                const response = await fetch('http://127.0.0.1:5000/send_email', {
+                // const response = await fetch('http://127.0.0.1:5000/send_email', {
+                const response = await fetch('http://35.182.29.153/api/send_email', {
                 // const response = await fetch('https://phishing-application-demo.onrender.com/send_email', {
                     method: 'POST',
                     headers: {
@@ -1225,7 +1227,8 @@ export default {
         },
 
         async downloadReport() {
-            const response = await fetch('http://127.0.0.1:5000/generate_reports');
+            // const response = await fetch('http://127.0.0.1:5000/generate_reports');
+            const response = await fetch('http://35.182.29.153/api/generate_reports');
             // const response = await fetch('https://phishing-application-demo.onrender.com/generate_reports');
             const blob = await response.blob();
             const url = window.URL.createObjectURL(blob);
@@ -1253,7 +1256,8 @@ export default {
 
         async fetchReports() {
             try {
-                const response = await fetch('http://127.0.0.1:5000/get_all_reports');
+                // const response = await fetch('http://127.0.0.1:5000/get_all_reports');
+                const response = await fetch('http://35.182.29.153/api/get_all_reports');
                 // const response = await fetch('https://phishing-application-demo.onrender.com/get_all_reports');
                 if (!response.ok) {
                     throw new Error('Failed to fetch reports');
@@ -1268,7 +1272,8 @@ export default {
 
         async fetchQuestions() {
             try {
-                const response = await fetch('http://127.0.0.1:5000/questions');
+                // const response = await fetch('http://127.0.0.1:5000/questions');
+                const response = await fetch('http://35.182.29.153/api/questions');
                 // const response = await fetch('https://phishing-application-demo.onrender.com/questions');
                 const data = await response.json();
                 this.questions = data;
@@ -1279,7 +1284,8 @@ export default {
 
         async fetchColleagues() {
             try {
-                const response = await fetch('http://127.0.0.1:5000/users');
+                // const response = await fetch('http://127.0.0.1:5000/users');
+                const response = await fetch('http://35.182.29.153/api/users');
                 // const response = await fetch('https://phishing-application-demo.onrender.com/users');
                 const data = await response.json();
                 this.colleagues = data;
@@ -1336,7 +1342,8 @@ export default {
             this.stopPolling();
 
             try {
-                const response = await fetch(`http://127.0.0.1:5000/generate_emailed_candidates_report`, {
+                // const response = await fetch(`http://127.0.0.1:5000/generate_emailed_candidates_report`, {
+                const response = await fetch(`http://35.182.29.153/api/generate_emailed_candidates_report`, {
                 // const response = await fetch(`https://phishing-application-demo.onrender.com/generate_emailed_candidates_report`, {
                     method: 'GET'
                 });
@@ -1382,7 +1389,8 @@ export default {
             formData.append('file', this.file);
 
             try {
-                const response = await fetch('http://127.0.0.1:5000/upload_colleagues_data', {
+                // const response = await fetch('http://127.0.0.1:5000/upload_colleagues_data', {
+                const response = await fetch('http://35.182.29.153/api/upload_colleagues_data', {
                 // const response = await fetch('https://phishing-application-demo.onrender.com/upload_colleagues_data', {
                 method: 'POST',
                 body: formData,
@@ -1430,7 +1438,8 @@ export default {
 
         async fetchQuestions() {
             try {
-                const response = await fetch('http://127.0.0.1:5000/questions');
+                // const response = await fetch('http://127.0.0.1:5000/questions');
+                const response = await fetch('http://35.182.29.153/api/questions');
                 // const response = await fetch('https://phishing-application-demo.onrender.com/questions');
                 const data = await response.json();
                 this.questions = data;
@@ -1440,7 +1449,8 @@ export default {
         },
 
         async addQuestion() {
-            const response = await fetch('http://127.0.0.1:5000/questions', {
+            // const response = await fetch('http://127.0.0.1:5000/questions', {
+            const response = await fetch('http://35.182.29.153/api/questions', {
             // const response = await fetch('https://phishing-application-demo.onrender.com/questions', {
                 method: 'POST',
                 headers: {
@@ -1471,7 +1481,8 @@ export default {
                 return;
             }
 
-            const response = await fetch(`http://127.0.0.1:5000/questions/${this.currentQuestionId}`, {
+            // const response = await fetch(`http://127.0.0.1:5000/questions/${this.currentQuestionId}`, {
+            const response = await fetch(`http://35.182.29.153/api/questions/${this.currentQuestionId}`, {
             // const response = await fetch(`https://phishing-application-demo.onrender.com/questions/${this.currentQuestionId}`, {
                 method: 'PUT',
                 headers: {
@@ -1494,7 +1505,8 @@ export default {
         },
 
         async deleteQuestion(id) {
-            await fetch(`http://127.0.0.1:5000/questions/${id}`, {
+            // await fetch(`http://127.0.0.1:5000/questions/${id}`, {
+            await fetch(`http://35.182.29.153/api/questions/${id}`, {
             // await fetch(`https://phishing-application-demo.onrender.com/questions/${id}`, {
                 method: 'DELETE'
             });
@@ -1558,7 +1570,8 @@ export default {
             try {
                 const pendingReports = this.reports.filter(report => report.status === 'Pending');
                 for (const report of pendingReports) {
-                    await fetch(`http://127.0.0.1:5000/send_reminder/${report.id}`, {
+                    // await fetch(`http://127.0.0.1:5000/send_reminder/${report.id}`, {
+                    await fetch(`http://35.182.29.153/api/send_reminder/${report.id}`, {
                     // await fetch(`https://phishing-application-demo.onrender.com/send_reminder/${report.id}`, {
                         method: 'POST',
                         headers: {
@@ -1579,7 +1592,8 @@ export default {
             }
 
             try {
-                const response = await fetch('http://127.0.0.1:5000/delete_colleagues_data', {
+                // const response = await fetch('http://127.0.0.1:5000/delete_colleagues_data', {
+                const response = await fetch('http://35.182.29.153/api/delete_colleagues_data', {
                 // const response = await fetch('https://phishing-application-demo.onrender.com/delete_colleagues_data', {
                     method: 'DELETE'
                 });
@@ -1601,7 +1615,8 @@ export default {
 
         async downloadCertificate(colleagueId) {
             try {
-                const response = await fetch(`http://127.0.0.1:5000/download-certificate/${colleagueId}`, {
+                // const response = await fetch(`http://127.0.0.1:5000/download-certificate/${colleagueId}`, {
+                const response = await fetch(`http://35.182.29.153/api/download-certificate/${colleagueId}`, {
                 // const response = await fetch(`https://phishing-application-demo.onrender.com/download-certificate/${colleagueId}`, {
                     method: 'GET',
                     headers: {
@@ -1630,7 +1645,8 @@ export default {
 
         async downloadReportPdf() {
             try {
-                const response = await fetch('http://127.0.0.1:5000/generate_reports_pdf');
+                // const response = await fetch('http://127.0.0.1:5000/generate_reports_pdf');
+                const response = await fetch('http://35.182.29.153/api/generate_reports_pdf');
                 if (!response.ok) throw new Error('Failed to fetch PDF report');
 
                 const blob = await response.blob();

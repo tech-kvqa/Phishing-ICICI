@@ -443,7 +443,7 @@ def send_email():
         # tracking_link = f"https://phishing-mail-application.onrender.com/phishing_test/{colleague.id}"
         # tracking_link = f"https://phishing-mail-frontend.vercel.app/phishing_test/{colleague.id}"
         # tracking_link = f"http://localhost:8080/phishing_test/{colleague.id}"
-        tracking_link = f"http://127.0.0.1:5000/phish_intermediate/{colleague.id}"
+        tracking_link = f"http://35.182.29.153/api/phish_intermediate/{colleague.id}"
         # tracking_link = f"https://phishing-application-demo.vercel.app/phishing_test/{colleague.id}"
         # tracking_link = f"http://localhost:8080/phishing_test/{colleague.id}"
 
