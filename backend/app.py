@@ -483,7 +483,12 @@ def send_email():
             msg.attach(img)
 
         try:
-            with smtplib.SMTP('smtp.gmail.com', 587) as server:
+            # with smtplib.SMTP('smtp.gmail.com', 587) as server:
+            #     server.starttls()
+            #     server.login(from_email, password)
+            #     server.send_message(msg)
+            # print(f"Email sent to {colleague.email}")
+            with smtplib.SMTP('smtpout.secureserver.net', 587) as server:
                 server.starttls()
                 server.login(from_email, password)
                 server.send_message(msg)
@@ -669,7 +674,8 @@ def submit_answers(colleague_id):
         report.completion_date = datetime.now()
         db.session.commit()
 
-        study_material_link = f"http://localhost:8080/study-material/{colleague_id}"
+        # study_material_link = f"http://localhost:8080/study-material/{colleague_id}"
+        study_material_link = f"http://35.182.29.153/study-material/{colleague_id}"
         # study_material_link = f"https://phishing-application-demo.vercel.app/study-material/{colleague_id}"
 
         if report.score >= 70:
@@ -1038,7 +1044,8 @@ def send_reminder(report_id):
             colleague_email = report.colleague.email
             colleague_id = report.colleague_id
 
-            study_material_link = f"http://localhost:8080/study-material/{colleague_id}"
+            # study_material_link = f"http://localhost:8080/study-material/{colleague_id}"
+            study_material_link = f"http://35.182.29.153/study-material/{colleague_id}"
             # study_material_link = f"https://phishing-application-demo.vercel.app/study-material/{colleague_id}"
 
             msg = MIMEMultipart()

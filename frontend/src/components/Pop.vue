@@ -846,10 +846,10 @@ async submitAnswers() {
                 <!-- <img src="\RIA_logo.jpeg" alt="Company Logo" class="ria-logo"> -->
                 <img src="\Xploit2Secure.png" alt="Company Logo" class="ria-logo">
                 <div class="warning-text">
-                    <p>This was a Phishing Simulation exercise conducted by KVQA under the guidance of KVQA's Lav Kaushik. You shouldn't have clicked on the link. You can see that this email was generated from outside. The email is from a different domain than KVQA. You should be cautious before clicking any unknown link that is from outside and enticing you to click on some link.</p>
+                    <p>This was a Phishing Simulation exercise conducted by Xploit2Secure under the guidance of Xploit2Secure's Lav Kaushik. You shouldn't have clicked on the link. You can see that this email was generated from outside. The email is from a different domain than Xploit2Secure. You should be cautious before clicking any unknown link that is from outside and enticing you to click on some link.</p>
                 </div>
-                <p class="warning">As you clicked on the link, it is mandatory for you to complete the KVQA Phishing training. KVQA Infosec team will schedule the phishing awareness training session and Quiz for you shortly.</p>
-                <button class="button-primary" @click="startTutorial">KVQA Phishing Training Link</button>   
+                <p class="warning">As you clicked on the link, it is mandatory for you to complete the Xploit2Secure Phishing training. Xploit2Secure Infosec team will schedule the phishing awareness training session and Quiz for you shortly.</p>
+                <button class="button-primary" @click="startTutorial">Phishing Training Link</button>   
             </div>
 
 
