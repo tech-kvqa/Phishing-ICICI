@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Human Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .btn {
+            background-color: #4285f4;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #3367d6;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Human Verification</h2>
+        <p>This is a phishing simulation test link.</p>
+        <form method="get" action="http://localhost:8080/phishing_test/{{colleague_id}}">
+            <button type="submit" class="btn">I'm not a bot — Continue</button>
+        </form>
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ICICI Bank - Secure Access</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='icici-favicon.png') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f6f7fb;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .proceed-btn {
+            background-color: #ec2027;
+            border: none;
+            color: white;
+            font-weight: 500;
+            padding: 12px 30px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+        .proceed-btn:hover {
+            background-color: #c51922;
+        }
+        .bank-logo {
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-5 text-center">
+            <img src="{{ url_for('static', filename='Icici Bank.png') }}" alt="ICICI Bank" class="mb-4 bank-logo">
+            <h3 class="mb-3">Secure Authentication Required</h3>
+            <p class="text-muted mb-4">To continue, please verify your identity and proceed to the secure resource.</p>
+            
+            <form method="get" action="http://localhost:8080/phishing_test/{{ colleague_id }}">
+                <button type="submit" class="proceed-btn">Proceed Securely</button>
+            </form>
+
+            <div class="mt-4 text-muted" style="font-size: 13px;">
+                ICICI Bank cares about your security. If you have concerns, contact our support desk.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

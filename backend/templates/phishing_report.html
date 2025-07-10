@@ -1,0 +1,217 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Phishing Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { text-align: center; font-size: 28px; margin-bottom: 0; }
+        h2 { font-size: 20px; margin-top: 30px; }
+        .confidential { text-align: center; color: #666; margin-top: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background: #333; color: white; }
+        .summary-table { width: 60%; margin: 20px auto; }
+        img.chart { display: block; margin: 20px auto; max-width: 300px; }
+        footer { position: fixed; bottom: 10px; text-align: center; font-size: 12px; color: #888; }
+    </style>
+</head>
+<body>
+
+<h1>Monthly Phishing Simulation Report</h1>
+<div class="confidential">Document Classification: Company Confidential</div>
+
+<h2>Summary</h2>
+<table class="summary-table">
+    <tr><th>Metric</th><th>Value</th></tr>
+    {% for item in summary %}
+    <tr><td>{{ item.label }}</td><td>{{ item.value }}</td></tr>
+    {% endfor %}
+</table>
+
+<h2>Summary Charts</h2>
+{% for chart in charts %}
+    <img src="data:image/png;base64,{{ chart }}" class="chart">
+{% endfor %}
+
+<h2>Candidate Reports</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Link Clicked</th>
+        <th>Training Completed</th>
+        <th>Score</th>
+        <th>Status</th>
+        <th>Completion Date</th>
+    </tr>
+    {% for report in reports %}
+    <tr>
+        <td>{{ report.id }}</td>
+        <td>{{ report.name }}</td>
+        <td>{{ report.clicked }}</td>
+        <td>{{ report.answered }}</td>
+        <td>{{ report.score }}</td>
+        <td>{{ report.status }}</td>
+        <td>{{ report.completion_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<footer>© 2025 KVQA InfoSec | Page rendered via WeasyPrint</footer>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Phishing Simulation Report</title>
+    <style>
+        @page {
+            size: A3 landscape;
+            margin: 30px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #222;
+            margin: 0;
+        }
+
+        .confidential {
+            text-align: center;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+        }
+
+        .summary-table {
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            margin: 20px;
+        }
+
+        .chart-card {
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        img.chart {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            width: 100%;
+            border-top: 1px solid #ccc;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Phishing Simulation Report</h1>
+    <img src="{{ company_logo }}" alt="Company Logo">
+</header>
+
+<div class="confidential">Document Classification: Confidential</div>
+
+<h2>Summary</h2>
+<table class="summary-table">
+    <tr><th>Metric</th><th>Value</th></tr>
+    {% for item in summary %}
+    <tr><td>{{ item.label }}</td><td>{{ item.value }}</td></tr>
+    {% endfor %}
+</table>
+
+<h2>Summary Charts</h2>
+<div class="chart-grid">
+    {% for chart in charts %}
+    <div class="chart-card">
+        <img src="data:image/png;base64,{{ chart }}" class="chart">
+    </div>
+    {% endfor %}
+</div>
+
+<h2>Candidate Reports</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Link Clicked</th>
+        <th>Training Completed</th>
+        <th>Score</th>
+        <th>Status</th>
+        <th>Completion Date</th>
+    </tr>
+    {% for report in reports %}
+    <tr>
+        <td>{{ report.id }}</td>
+        <td>{{ report.name }}</td>
+        <td>{{ report.clicked }}</td>
+        <td>{{ report.answered }}</td>
+        <td>{{ report.score }}</td>
+        <td>{{ report.status }}</td>
+        <td>{{ report.completion_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<footer>© 2025 KVQA InfoSec | Page rendered via WeasyPrint</footer>
+
+</body>
+</html>
